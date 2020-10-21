@@ -144,10 +144,8 @@ static MunitParameterEnum oomParams[] = {
 TEST(init, oom, setUp, tearDown, 0, oomParams)
 {
     struct fixture *f = data;
-#if defined(__i686__)
     /* XXX: tmpfs seems to not support O_DIRECT */
     return MUNIT_SKIP;
-#endif
 #if defined(__powerpc64__)
     /* XXX: fails on ppc64el */
     return MUNIT_SKIP;
